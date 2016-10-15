@@ -1,10 +1,11 @@
 {
-  "name": "index.js",
+  "name": "react-intro",
   "version": "1.0.0",
-  "description": "",
+  "description": "Introduction to React",
   "main": "index.js",
   "scripts": {
-    "build": ".\\node_modules\\.bin\\webpack --display-error-details"
+    "build": ".\\node_modules\\.bin\\webpack --display-error-details",
+    "start": ".\\node_modules\\.bin\\webpack-dev-server --content-base dist"
   },
   "author": "bandita",
   "license": "MIT",

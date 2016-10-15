@@ -56,13 +56,61 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var title = 'My React App';
+	var Header = function Header(props) {
+	    return _react2.default.createElement(
+	        'header',
+	        null,
+	        _react2.default.createElement(
+	            'h1',
+	            null,
+	            props.title
+	        )
+	    );
+	};
+
+	var Items = function Items() {
+	    return _react2.default.createElement(
+	        'ul',
+	        null,
+	        _react2.default.createElement(
+	            'li',
+	            null,
+	            'Item 1'
+	        ),
+	        _react2.default.createElement(
+	            'li',
+	            null,
+	            'Item 2'
+	        )
+	    );
+	};
+
+	var Content = function Content(props) {
+	    return _react2.default.createElement(
+	        'section',
+	        null,
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            props.description
+	        ),
+	        _react2.default.createElement(Items, null)
+	    );
+	};
+
+	var AppWithoutDescription = function AppWithoutDescription() {
+	    return _react2.default.createElement(Header, { title: 'No description here' });
+	};
 
 	var App = function App() {
+	    var appTitle = 'Fronttechs: React';
+	    var description = 'A is a simple react application';
+	    var items = ["Oliver", "Tobey", "Charlie", "Lucky"];
 	    return _react2.default.createElement(
-	        'div',
+	        'section',
 	        null,
-	        'My Reac App'
+	        _react2.default.createElement(Header, { title: appTitle }),
+	        _react2.default.createElement(Content, { description: description })
 	    );
 	};
 
