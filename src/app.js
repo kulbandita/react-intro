@@ -1,18 +1,37 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-function onSearchClick() {
-    console.log('onSearchClick')
+class SearchForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            query: ''
+        }
+    }
+    onSearchClick(event) {
+        event.preventDefault()
+        console.log('this.onSearchClick', event)
+    }
+    onQueryChange(event) {
+        const query = event.target.value
+        console.log('this.onQueryChange', query)
+        this.setState({
+            query: query
+        })
+    }
+    render() {
+        return (
+            <form>
+                <input type="text" 
+                    value={this.state.query} 
+                    onChange={this.onQueryChange.bind(this)} />
+                <button onClick={this.onSearchClick}>Search</button>
+            </form>
+        )
+    }
 }
 
-const SearchForm = () => (
-    <form>
-        <input type="text" />
-        <button onClick={onSearchClick}>Search</button>
-    </form>
-)
-
-const MovieList = (props) => (
+const MovieList = (props) => ( 
     <ul>
     {props.movies.map((movie, i) => {
         return (
@@ -43,4 +62,4 @@ const App = () => {
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render( < App / > , document.getElementById('app'))
