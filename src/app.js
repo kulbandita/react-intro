@@ -10,7 +10,7 @@ class SearchForm extends React.Component {
     }
     onSearchClick(event) {
         event.preventDefault()
-        console.log('this.onSearchClick', event)
+        console.log('this.onSearchClick', this.state.query)
     }
     onQueryChange(event) {
         const query = event.target.value
@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
                 <input type="text" 
                     value={this.state.query} 
                     onChange={this.onQueryChange.bind(this)} />
-                <button onClick={this.onSearchClick}>Search</button>
+                <button onClick={this.onSearchClick.bind(this)}>Search</button>
             </form>
         )
     }
